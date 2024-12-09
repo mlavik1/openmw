@@ -62,7 +62,7 @@ jobs:
         7z a ../build_artifact.7z .
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         path: ./build_artifact.7z
         name: build_artifact.7z
