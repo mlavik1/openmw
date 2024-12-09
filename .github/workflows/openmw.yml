@@ -54,18 +54,21 @@ jobs:
       shell: bash
       run: cmake --install .
 
-    - name: Create Artifact
-      shell: bash
-      working-directory: install
-      run: |
-        ls -laR
-        7z a ../build_artifact.7z .
+    - uses: jiro4989/build-deb-action@v3
+      with:
+        package: openmw
+        package_root: install
+        maintainer: Matias Lavik
+        version: ${{ github.ref }} # refs/tags/v*.*.*
+        arch: 'amd64'
+        desc: 'OpenMW is an open-source open-world RPG game engine that supports playing Morrowind.'
+        homepage: 'https://openmw.org/'
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
-        path: ./build_artifact.7z
-        name: build_artifact.7z
+        path: ./openmw.deb
+        name: openmw.deb
 
   MacOS:
     runs-on: macos-latest
