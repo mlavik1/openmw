@@ -67,8 +67,8 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
-        path: ./openmw.deb
-        name: openmw.deb
+        path: ./*.deb
+        name: openmw-deb
 
   MacOS:
     runs-on: macos-latest
