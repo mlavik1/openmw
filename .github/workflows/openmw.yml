@@ -63,6 +63,7 @@ jobs:
         arch: 'amd64'
         desc: 'OpenMW is an open-source open-world RPG game engine that supports playing Morrowind.'
         homepage: 'https://openmw.org/'
+        depends: 'libavcodec58, libavformat58, libavutil56, libboost-filesystem1.74.0, libboost-iostreams1.74.0, libboost-program-options1.74.0, libbullet3.06, libc6, libgcc-s1, libgl1, liblz4-1, libmyguiengine3debian1v5, libopenal1, libopenscenegraph161, libopenthreads21, librecast1, libsdl2-2.0-0, libstdc++6, libswresample3, libswscale5, libtinyxml2.6.2v5'
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
